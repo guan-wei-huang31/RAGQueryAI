@@ -15,7 +15,7 @@ RAGQueryAI is an AI-powered assistant that leverages **Retrieval-Augmented Gener
 - **Flask API** for AI model execution and query handling
 - **LangChain** for building retrieval and AI-assisted workflows
 
-  <img src="figure/AdvanceRAG.png" alt="Advance RAG flow" width="600" height="auto"/>
+  <img src="figure/AdvanceRAG.png" alt="Advance RAG flow" width="800" height="auto"/>
 
 ## Tech Stack
 
@@ -86,7 +86,9 @@ This will start Express.js on [**http://127.0.0.1:5000**](http://127.0.0.1:5000)
 1. Open the frontend at `http://127.0.0.1:5173`
 2. Ask product-related questions in the input box
 3. The system retrieves structured data from SQLite or performs vector search with ChromaDB
-4. AI-generated responses are displayed
+4. AI-generated responses are displayed  
+
+<img src="figure/demo.png" alt="demo screenshot" width="800" height="auto"/>
 
 ## Folder Structure
 
