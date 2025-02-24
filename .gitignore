@@ -1,0 +1,18 @@
+# Backend
+backend/node_modules/
+backend/venv/
+backend/db/*.db
+backend/db/*.sqlite3
+backend/db/195fb853-*
+backend/__pycache__/
+backend/*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/*.log
+
+#
+.DS_Store
+Thumbs.db
+*.cache
