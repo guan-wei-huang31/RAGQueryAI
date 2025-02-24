@@ -4,7 +4,7 @@
 
 RAGQueryAI is an AI-powered assistant that leverages **Retrieval-Augmented Generation (RAG)** using **LangChain, Ollama, and ChromaDB** to answer product-related queries. The backend is built with **Flask (Python)** for AI processing and **Express.js (Node.js)** for API routing, while the frontend is developed using **React.js**.
 
-## Features
+## 🚀Features
 
 - **Retrieval-Augmented Generation (RAG)** for accurate AI-driven responses
 - **Vector-based search with ChromaDB** for efficient query handling
@@ -17,7 +17,7 @@ RAGQueryAI is an AI-powered assistant that leverages **Retrieval-Augmented Gener
 
   <img src="figure/AdvanceRAG.png" alt="Advance RAG flow" width="800" height="auto"/>
 
-## Tech Stack
+## 📚Tech Stack
 
 ### **Backend**
 
@@ -36,7 +36,7 @@ RAGQueryAI is an AI-powered assistant that leverages **Retrieval-Augmented Gener
 - Node.js (Express.js)
 - Axios (Proxy requests to Flask API)
 
-## Installation & Setup
+## ⚙️Installation & Setup
 
 ### **1️⃣ Clone the Repository**
 
@@ -60,7 +60,6 @@ Run the Flask API:
 python rag_api.py
 ```
 
-By default, it runs on [**http://127.0.0.1:5001**](http://127.0.0.1:5001)
 
 ### **3️⃣ Frontend Setup**
 
@@ -70,7 +69,6 @@ npm install
 npm run dev
 ```
 
-By default, the frontend runs on [**http://127.0.0.1:5173**](http://127.0.0.1:5173)
 
 ### **4️⃣ Middleware/API Gateway Setup**
 
@@ -79,9 +77,8 @@ cd backend
 node server.js
 ```
 
-This will start Express.js on [**http://127.0.0.1:5000**](http://127.0.0.1:5000)
 
-## Usage
+## 💻Usage
 
 1. Open the frontend at `http://127.0.0.1:5173`
 2. Ask product-related questions in the input box
@@ -90,7 +87,7 @@ This will start Express.js on [**http://127.0.0.1:5000**](http://127.0.0.1:5000)
 
 <img src="figure/demo.png" alt="demo screenshot" width="800" height="auto"/>
 
-## Folder Structure
+## 📂Folder Structure
 
 ```
 RAGQueryAI/
@@ -116,5 +113,6 @@ This project is licensed under the MIT License.
 
 ## Contributors
 
-- **Your Name** ([@yourgithub](https://github.com/yourgithub))
-
+- **Guan-Wei Huang**  
+For questions or suggestions, feel free to contact:  
+Email: gwhuang24@gmail.com
