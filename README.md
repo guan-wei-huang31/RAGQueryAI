@@ -93,15 +93,15 @@ node server.js
 RAGQueryAI/
 │── backend/
 │   ├── db/              (SQLite database & ChromaDB files)
-│   ├── venv/            (Python virtual environment)
 │   ├── rag_api.py       (Flask API with RAG processing)
 │   ├── server.js        (Express.js middleware)
 │   ├── requirements.txt (Python dependencies)
 │   ├── package.json     (Node.js dependencies)
 │── frontend/
 │   ├── src/             (React components)
+│       ├── App.jsx      (Main React component)
 │   ├── public/          (Static assets)
-│   ├── App.jsx          (Main React component)
+│   ├── indext.html      (Main entry component)
 │   ├── package.json     (React dependencies)
 │── .gitignore
 │── README.md

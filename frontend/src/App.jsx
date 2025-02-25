@@ -1,3 +1,17 @@
+/**
+ * Filename: App.jsx
+ * Author: Guan-Wei Huang
+ * Created: 2025-02-24
+ * Version: 1.0.0
+ * License: MIT
+ * Description:
+ *     This React component provides a simple UI for users to ask product-related questions.
+ *     It sends user input to a backend API and displays the AI-generated response.
+ *
+ * Contact: gwhuang24@gmail.com
+ * GitHub: https://github.com/guan-wei-huang31
+ */
+
 import React, { useState } from "react";
 import axios from "axios";
 

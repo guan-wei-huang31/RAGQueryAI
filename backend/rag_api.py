@@ -1,3 +1,18 @@
+##############################################################################
+#Filename: rag_api.py
+#Author: Guan-Wei Huang
+#Created: 2025-02-24
+#Version: 1.0.0
+#License: MIT
+#Description: 
+#    This script sets up a Flask API for retrieving product information using 
+#    a combination of structured SQL queries and vector-based retrieval (RAG).
+#    It integrates with SQLite and ChromaDB for efficient data retrieval.
+#    
+#Contact: gwhuang24@gmail.com
+#GitHub: https://github.com/guan-wei-huang31
+##############################################################################
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from langchain_ollama import OllamaLLM, OllamaEmbeddings
@@ -119,7 +134,7 @@ last_product = None
 # **11. Flask API**
 @app.route("/ask", methods=["POST"])
 def ask_question():
-    global last_product, context  # 記住用戶的 `last_product` 和 `context`
+    global last_product, context   # Store user's `last_product` and `context`
 
     data = request.json
     input_text = data.get("question", "").strip()
@@ -127,10 +142,10 @@ def ask_question():
     if not input_text:
         return jsonify({"error": "No question provided"}), 400
 
-    # 🚀 **Step 1: Query Rewriting**
+    # **Step 1: Query Rewriting**
     input_text = rewrite_query(input_text, last_product)
 
-    # 🚀 **Step 2: SQL 查詢**
+    # **Step 2: SQL Query Execution**
     structured_questions = {
         "price": "reference_price",
         "manufacturer": "manufacturer",
@@ -144,22 +159,22 @@ def ask_question():
                 answer = query_product_info(last_product, column)
                 return jsonify({"answer": answer, "product_name": last_product})
 
-    # 🚀 **Step 3: 向量檢索（ChromaDB）**
+    #  **Step 3: Vector Search (ChromaDB)**
     response = retrieval_chain.invoke({"input": input_text, "context": context})
     answer = response["answer"]
 
-    # 🚀 **Step 4: 記住 `last_product`，支援多輪對話**
+    # **Step 4: Store `last_product` for multi-turn conversation support**
     for product in df["product_name"].tolist():
         if product.lower() in answer.lower():
             last_product = product
             break 
 
-    # 🚀 **Step 5: 記住 `context`**
+    # **Step 5: Store `context`**
     context = response.get("context", [])
 
     return jsonify({"answer": answer, "last_product": last_product})
 
-# **🔹 啟動 Flask API**
+# **Start Flask API**
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5001)
 

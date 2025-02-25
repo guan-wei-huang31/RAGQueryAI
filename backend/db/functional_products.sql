@@ -1,3 +1,19 @@
+/*
+Filename: functional_products.sql
+Author: Guan-Wei Huang
+Created: 2025-02-24
+Version: 1.0.0
+License: MIT
+Description:
+    This SQL script initializes the database schema and populates data 
+    for functional products. It includes table creation, constraints, 
+    indexes, and sample data.
+
+Contact: gwhuang24@gmail.com
+GitHub: https://github.com/guan-wei-huang31
+*/
+
+
 CREATE TABLE Functional_Products (
     product_id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_name TEXT NOT NULL,

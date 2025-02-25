@@ -1,3 +1,18 @@
+/**
+ * Filename: server.js
+ * Author: Guan-Wei Huang
+ * Created: 2025-02-24
+ * Version: 1.0.0
+ * License: MIT
+ * Description:
+ *     This script sets up an Express.js server that acts as a middleware
+ *     between the frontend and the Python RAG API. It handles requests and
+ *     forwards them to the Python backend.
+ *
+ * Contact: gwhuang24@gmail.com
+ * GitHub: https://github.com/guan-wei-huang31
+ */
+ 
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -10,24 +25,24 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// 🛠️ 修正 `/ask` 只處理 POST 請求
+//  Ensure `/ask` only handles POST requests
 app.post("/ask", async (req, res) => {
     try {
-        console.log("Received request:", req.body);  // ✅ Debug
+        console.log("Received request:", req.body);
         const response = await axios.post("http://localhost:5001/ask", req.body);
         res.json(response.data);
     } catch (error) {
-        console.error("Error:", error);  // ✅ Debug
+        console.error("Error:", error);
         res.status(500).json({ error: "Python RAG API error", details: error.message });
     }
 });
 
-// 🛠️ 讓 `/` 顯示 API 狀態，避免 `Cannot GET /`
+//  Root route to display API status, preventing `Cannot GET /` error
 app.get("/", (req, res) => {
     res.send("Express.js API is running...");
 });
 
-// 啟動 Express 伺服器
+// Start the Express server
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
